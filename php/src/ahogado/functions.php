@@ -1,19 +1,11 @@
 <?php
 
 function inicializar_progreso($longitud_palabra) {
-    $progreso = array();
-    for ($i = 0; $i < $longitud_palabra; $i++) {
-        $progreso[$i] = '_';
-    }
-    return $progreso;
+    return array_fill(0, $longitud_palabra, '_');
 }
 
 function imprimir_progreso($progreso) {
-    $resultado = '';
-    for ($i = 0; $i < count($progreso); $i++) {
-        $resultado .= $progreso[$i] . ' ';
-    }
-    return $resultado;
+    return implode(' ', $progreso);
 }
 
 function verificar_letra($palabra, $letra, &$progreso) {
